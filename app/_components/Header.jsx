@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
+import Authentication from "./Authentication";
 
 const Header = () => {
   return (
@@ -10,9 +11,9 @@ const Header = () => {
         <h2 className="text-2xl font-bold">YT Video Gen</h2>
       </div>
       <div>
-        <Button>
-            Get Started
-        </Button>
+        <Authentication>
+          <Button>Get Started</Button>
+        </Authentication>
       </div>
     </div>
   );
