@@ -1,6 +1,6 @@
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import Provider from "./provider";
+import ConvexClientProvider from "./ConvexClientProvider";
 
 export const metadata = {
   title: "AI YOUTUBE SHORT VIDEO GENERATOR",
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={outfit.className}>
-        <Provider>{children}</Provider>
+        <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   );
