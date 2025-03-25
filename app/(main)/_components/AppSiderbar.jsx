@@ -7,6 +7,7 @@ import {
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const AppSiderbar = () => {
   return (
@@ -20,7 +21,11 @@ const AppSiderbar = () => {
         <h2 className="text-lg text-gray-400 text-center mt-3">Ai Short Video Generator</h2>
       </div>
       <SidebarContent>
-        <SidebarGroup />
+        <SidebarGroup>
+          <div className="mx-5 mt-10">
+            <Button className="w-full">+ Create New Video</Button>
+          </div>
+        </SidebarGroup>
         <SidebarGroup />
       </SidebarContent>
       <SidebarFooter />
