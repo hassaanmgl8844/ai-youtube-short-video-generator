@@ -8,6 +8,15 @@ import {
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { HomeIcon } from "lucide-react";
+
+const MenuItems=[
+  {
+    title:"Home",
+    url: "/dashboard",
+    icon: HomeIcon                   
+  }
+]
 
 const AppSiderbar = () => {
   return (
