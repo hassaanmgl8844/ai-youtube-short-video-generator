@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Sidebar,
@@ -59,12 +60,12 @@ const AppSiderbar = () => {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>
-            <div className="mx-5 mt-8">
+            <div className="mx-3 mt-8">
               <Button className="w-full">+ Create New Video</Button>
             </div>
             <SidebarMenu>
               {MenuItems.map((menu,index)=>(
-                <SidebarMenuItem className="mt-3">
+                <SidebarMenuItem className="mt-3 mx-3">
                   <SidebarMenuButton isActive={path==menu.url} className="p-5">
                     <Link href={menu.url} className="flex items-center gap-4 p-3">
                     <menu.icon />
