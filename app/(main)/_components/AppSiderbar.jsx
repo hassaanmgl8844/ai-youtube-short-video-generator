@@ -8,13 +8,28 @@ import {
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { HomeIcon } from "lucide-react";
+import { HomeIcon, LucideFileVideo, Search, WalletCards } from "lucide-react";
 
 const MenuItems=[
   {
     title:"Home",
     url: "/dashboard",
     icon: HomeIcon                   
+  },
+  {
+    title:"Create New Video",
+    url:"/create-new-video",
+    icon: LucideFileVideo
+  },
+  {
+    title:"Explore",
+    url:"/explore",
+    icon: Search
+  },
+  {
+    title:"Billing",
+    url:"/billing",
+    icon: WalletCards
   }
 ]
 
