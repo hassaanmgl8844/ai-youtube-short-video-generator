@@ -4,51 +4,57 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupContent,
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { HomeIcon, LucideFileVideo, Search, WalletCards } from "lucide-react";
 
-const MenuItems=[
+const MenuItems = [
   {
-    title:"Home",
+    title: "Home",
     url: "/dashboard",
-    icon: HomeIcon                   
+    icon: HomeIcon,
   },
   {
-    title:"Create New Video",
-    url:"/create-new-video",
-    icon: LucideFileVideo
+    title: "Create New Video",
+    url: "/create-new-video",
+    icon: LucideFileVideo,
   },
   {
-    title:"Explore",
-    url:"/explore",
-    icon: Search
+    title: "Explore",
+    url: "/explore",
+    icon: Search,
   },
   {
-    title:"Billing",
-    url:"/billing",
-    icon: WalletCards
-  }
-]
+    title: "Billing",
+    url: "/billing",
+    icon: WalletCards,
+  },
+];
 
 const AppSiderbar = () => {
   return (
     <Sidebar>
-      <SidebarHeader />
-      <div className="">
-        <div className="flex items-center gap-3 w-full justify-center mt-5">
-          <Image src={"/logo.svg"} alt="logo" width={40} height={40} />
-          <h2 className="font-bold text-2xl">Video Gen</h2>
+      <SidebarHeader>
+        <div className="">
+          <div className="flex items-center gap-3 w-full justify-center mt-5">
+            <Image src={"/logo.svg"} alt="logo" width={40} height={40} />
+            <h2 className="font-bold text-2xl">Video Gen</h2>
+          </div>
+          <h2 className="text-lg text-gray-400 text-center mt-3">
+            Ai Short Video Generator
+          </h2>
         </div>
-        <h2 className="text-lg text-gray-400 text-center mt-3">Ai Short Video Generator</h2>
-      </div>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <div className="mx-5 mt-10">
-            <Button className="w-full">+ Create New Video</Button>
-          </div>
+          <SidebarGroupContent>
+            <div className="mx-5 mt-8">
+              <Button className="w-full">+ Create New Video</Button>
+            </div>
+          </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup />
       </SidebarContent>
