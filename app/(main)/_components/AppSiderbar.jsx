@@ -6,10 +6,14 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { HomeIcon, LucideFileVideo, Search, WalletCards } from "lucide-react";
+import Link from "next/link";
 
 const MenuItems = [
   {
@@ -54,6 +58,18 @@ const AppSiderbar = () => {
             <div className="mx-5 mt-8">
               <Button className="w-full">+ Create New Video</Button>
             </div>
+            <SidebarMenu>
+              {MenuItems.map((menu,index)=>(
+                <SidebarMenuItem>
+                  <SidebarMenuButton>
+                    <Link href={menu.url} >
+                    <menu.icon />
+                    <span>{menu.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup />
