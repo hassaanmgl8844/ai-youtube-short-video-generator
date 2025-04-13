@@ -60,11 +60,11 @@ const AppSiderbar = () => {
             </div>
             <SidebarMenu>
               {MenuItems.map((menu,index)=>(
-                <SidebarMenuItem>
-                  <SidebarMenuButton>
-                    <Link href={menu.url} >
+                <SidebarMenuItem className="mt-3">
+                  <SidebarMenuButton className="p-5">
+                    <Link href={menu.url} className="flex items-center gap-4 p-3">
                     <menu.icon />
-                    <span>{menu.title}</span>
+                    <span>{menu?.title}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
