@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { HomeIcon, LucideFileVideo, Search, WalletCards } from "lucide-react";
+import { Gem, HomeIcon, LucideFileVideo, Search, WalletCards } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -79,7 +79,15 @@ const AppSiderbar = () => {
         </SidebarGroup>
         <SidebarGroup />
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <div className="p-5 border rounded-lg mb-6 bg-gray-800">
+          <div className="flex items-center justify-between">
+            <Gem className="text-gray-400" />
+            <h2 className="text-gray-400"> 5 Credits Left</h2>
+          </div>
+          <Button className="w-full mt-3">Buy More Credits</Button>
+        </div>
+      </SidebarFooter>
     </Sidebar>
   );
 };
