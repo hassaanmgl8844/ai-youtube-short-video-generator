@@ -49,7 +49,7 @@ const MenuItems = [
 
 const AppSiderbar = () => {
   const path = usePathname();
-  const {user} = useAuthContext();
+  const { user } = useAuthContext();
   console.log(path);
 
   return (
@@ -69,7 +69,9 @@ const AppSiderbar = () => {
         <SidebarGroup>
           <SidebarGroupContent>
             <div className="mx-3 mt-8">
-              <Button className="w-full">+ Create New Video</Button>
+              <Link href="/create-new-video">
+                <Button className="w-full ">+ Create New Video</Button>
+              </Link>
             </div>
             <SidebarMenu>
               {MenuItems.map((menu, index) => (
