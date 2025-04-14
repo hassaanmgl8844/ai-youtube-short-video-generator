@@ -13,9 +13,16 @@ import {
 } from "@/components/ui/sidebar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Gem, HomeIcon, LucideFileVideo, Search, WalletCards } from "lucide-react";
+import {
+  Gem,
+  HomeIcon,
+  LucideFileVideo,
+  Search,
+  WalletCards,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useAuthContext } from "@/app/provider";
 
 const MenuItems = [
   {
@@ -41,9 +48,10 @@ const MenuItems = [
 ];
 
 const AppSiderbar = () => {
-  const path=usePathname();
+  const path = usePathname();
+  const {user} = useAuthContext();
   console.log(path);
-  
+
   return (
     <Sidebar>
       <SidebarHeader>
@@ -64,12 +72,18 @@ const AppSiderbar = () => {
               <Button className="w-full">+ Create New Video</Button>
             </div>
             <SidebarMenu>
-              {MenuItems.map((menu,index)=>(
+              {MenuItems.map((menu, index) => (
                 <SidebarMenuItem className="mt-3 mx-3" key={index}>
-                  <SidebarMenuButton isActive={path==menu.url} className="p-5">
-                    <Link href={menu.url} className="flex items-center gap-4 p-3">
-                    <menu.icon />
-                    <span>{menu?.title}</span>
+                  <SidebarMenuButton
+                    isActive={path == menu.url}
+                    className="p-5"
+                  >
+                    <Link
+                      href={menu.url}
+                      className="flex items-center gap-4 p-3"
+                    >
+                      <menu.icon />
+                      <span>{menu?.title}</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -83,7 +97,7 @@ const AppSiderbar = () => {
         <div className="p-5 border rounded-lg mb-6 bg-gray-800">
           <div className="flex items-center justify-between">
             <Gem className="text-gray-400" />
-            <h2 className="text-gray-400"> 5 Credits Left</h2>
+            <h2 className="text-gray-400"> {user?.credits} Credits Left</h2>
           </div>
           <Button className="w-full mt-3">Buy More Credits</Button>
         </div>
